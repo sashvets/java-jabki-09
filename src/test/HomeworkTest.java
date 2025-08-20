@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -39,7 +40,7 @@ class HomeworkTest {
         students.put("Назин", 48);
         students.put("Сергеенков", 47);
         students.put("Орлов", 48);
-        Assertions.assertEquals("[Назин, Орлов]", Homework.getTopStudent(students).toString());
+        Assertions.assertEquals(new HashSet<>(List.of("Назин", "Орлов")), new HashSet<>(Homework.getTopStudent(students)));
     }
 
     @Test
@@ -57,6 +58,6 @@ class HomeworkTest {
         exception = Assertions.assertThrows(IllegalArgumentException.class, () -> dict.addSynonym("", ""));
         Assertions.assertEquals("Нельзя задать синонимы с пустым значением.", exception.getMessage());
         Set<String> expected = Set.of("перечень", "реестр", "табель", "список");
-        Assertions.assertEquals(expected,dict.getSynonyms("каталог"));
+        Assertions.assertEquals(expected, dict.getSynonyms("каталог"));
     }
 }

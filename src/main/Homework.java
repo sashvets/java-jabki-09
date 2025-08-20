@@ -22,16 +22,7 @@ public class Homework {
         hashSet.add("pascal");
         hashSet.add("python");
         hashSet.add("php");
-        boolean isFirst = true;
-        for (String string : hashSet) {
-            if (isFirst) {
-                System.out.print(string);
-                isFirst = false;
-            } else {
-                System.out.print(", " + string);
-            }
-        }
-        System.out.println();
+        System.out.println(hashSet);
 
         /**
          * Проверка на наличие элемента
@@ -55,17 +46,8 @@ public class Homework {
          * Дан список строк с повторами.
          * Добавьте их в HashSet и выведите количество уникальных слов
          */
-        List<String> stringList = new ArrayList<>(List.of("basic", "basic", "java", "java", "pascal", "pascal", "python", "php"));
-        HashSet<String> hashSetUniq = new HashSet<>();
-        int countUniq = 0;
-        for (String string : stringList) {
-            if (!hashSetUniq.add(string)) {
-                countUniq--;
-            } else {
-                countUniq++;
-            }
-        }
-        System.out.printf("Количество уникальных элементов:\n С условием что не повторялись: %s\n Все: %s\n", countUniq, hashSetUniq.size());
+        HashSet<String> hashSetUniq = new HashSet<>(List.of("basic", "basic", "java", "java", "pascal", "pascal", "python", "php"));
+        System.out.printf("Количество уникальных элементов: %s\n", hashSetUniq.size());
         System.out.println();
 
         /**
