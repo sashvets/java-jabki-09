@@ -31,7 +31,6 @@ public class Homework {
                 System.out.print(", " + string);
             }
         }
-        isFirst = true;
         System.out.println();
 
         /**
@@ -122,12 +121,12 @@ public class Homework {
          * Удаление ключа
          * Удалите ключ "Physics" из мапы
          */
-        String keyValueDelete = "Physics";
-        if (gradeOfSubjectHashMap.containsKey(keyValueDelete)) {
-            gradeOfSubjectHashMap.remove(keyValueDelete);
-            System.out.printf("Удален ключ \"%s\"\n", keyValueDelete);
+        String keyDelete = "Physics";
+        Integer valueDeleted = gradeOfSubjectHashMap.remove(keyDelete);
+        if (valueDeleted != null) {
+            System.out.printf("Удален ключ \"%s\" со значением %s\n", keyDelete, valueDeleted);
         }
-        System.out.printf("Ключ \"%s\" %s\n\n", keyValueDelete, gradeOfSubjectHashMap.containsKey(keyValueDelete) ? "найден" : "не найден");
+        System.out.println();
 
         /**
          * Medium
