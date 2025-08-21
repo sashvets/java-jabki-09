@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -192,13 +193,13 @@ public class Homework {
      * Верните имя студента с максимальным баллом
      */
     public static List<String> getTopStudent(Map<String, Integer> studentGrades) {
-        int maxGrade = studentGrades.values().stream()
-                .mapToInt(Integer::intValue)
-                .max()
-                .orElse(Integer.MIN_VALUE);
-        return studentGrades.entrySet().stream()
-                .filter(entry -> entry.getValue() == maxGrade)
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
+        int maxGrade = Collections.max(studentGrades.values());
+        List<String> topStudents = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : studentGrades.entrySet()) {
+            if (entry.getValue().equals(maxGrade)) {
+                topStudents.add(entry.getKey());
+            }
+        }
+        return topStudents;
     }
 }
