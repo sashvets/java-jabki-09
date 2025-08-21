@@ -40,7 +40,7 @@ class HomeworkTest {
         students.put("Назин", 48);
         students.put("Сергеенков", 47);
         students.put("Орлов", 48);
-        Assertions.assertEquals(new HashSet<>(List.of("Назин", "Орлов")), new HashSet<>(Homework.getTopStudent(students)));
+        Assertions.assertEquals(new HashSet<>(List.of("Орлов", "Назин")), new HashSet<>(Homework.getTopStudent(students)));
     }
 
     @Test
