@@ -57,7 +57,7 @@ public class Homework {
          * Создайте HashMap<String, Integer> с названиями предметов и оценками.
          * Выведите все пары ключ-значение
          */
-        HashMap<String, Integer> gradeOfSubjectHashMap = new HashMap<>(
+        Map<String, Integer> gradeOfSubjectMap = new HashMap<>(
                 Map.of(
                         "География", 4,
                         "Math", 5,
@@ -68,7 +68,7 @@ public class Homework {
                         "History", 3,
                         "Physics", 3
                 ));
-        for (Map.Entry<String, Integer> grade : gradeOfSubjectHashMap.entrySet()) {
+        for (Map.Entry<String, Integer> grade : gradeOfSubjectMap.entrySet()) {
             System.out.printf("По предмету %s оценка %s\n", grade.getKey(), grade.getValue());
         }
         System.out.println();
@@ -78,7 +78,7 @@ public class Homework {
          * Выведите значение по ключу "Math".
          */
         String keyValue = "Math";
-        System.out.printf("Значение по ключу \"%s\" равно %s\n", keyValue, gradeOfSubjectHashMap.get(keyValue));
+        System.out.printf("Значение по ключу \"%s\" равно %s\n", keyValue, gradeOfSubjectMap.get(keyValue));
         System.out.println();
 
         /**
@@ -86,9 +86,9 @@ public class Homework {
          * Измените значение по ключу "English" на 5
          */
         String keyForEdit = "English";
-        Integer valueForEdit = gradeOfSubjectHashMap.get(keyForEdit);
-        if (gradeOfSubjectHashMap.replace(keyForEdit, valueForEdit, 5)) {
-            System.out.printf("Измененное значение по ключу \"%s\" с %s на %s\n", keyForEdit, valueForEdit, gradeOfSubjectHashMap.get(keyForEdit));
+        Integer valueForEdit = gradeOfSubjectMap.get(keyForEdit);
+        if (gradeOfSubjectMap.replace(keyForEdit, valueForEdit, 5)) {
+            System.out.printf("Измененное значение по ключу \"%s\" с %s на %s\n", keyForEdit, valueForEdit, gradeOfSubjectMap.get(keyForEdit));
         }
         System.out.println();
 
@@ -97,7 +97,7 @@ public class Homework {
          * Проверьте, есть ли в мапе ключ "History"
          */
         String keyValueContain = "History";
-        System.out.printf("Ключ \"%s\" содержится в мапе: %s\n", keyValueContain, gradeOfSubjectHashMap.containsKey(keyValueContain));
+        System.out.printf("Ключ \"%s\" содержится в мапе: %s\n", keyValueContain, gradeOfSubjectMap.containsKey(keyValueContain));
         System.out.println();
 
         /**
@@ -105,7 +105,7 @@ public class Homework {
          * Удалите ключ "Physics" из мапы
          */
         String keyDelete = "Physics";
-        Integer valueDeleted = gradeOfSubjectHashMap.remove(keyDelete);
+        Integer valueDeleted = gradeOfSubjectMap.remove(keyDelete);
         if (valueDeleted != null) {
             System.out.printf("Удален ключ \"%s\" со значением %s\n", keyDelete, valueDeleted);
         }
